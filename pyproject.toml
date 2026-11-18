@@ -1,0 +1,26 @@
+[project]
+name = "bmath"
+version = "0.1.0"
+description = "Boolean expressions, their exact polynomial form, and analysis built on it"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.13.9,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "ruff>=0.17.5",
+]
+
+[tool.mypy]
+strict = true
+files = ["src", "tests", "examples"]
+mypy_path = ["tests", "examples"]
+
+[tool.ruff]
+# Script directories whose modules are imported by name (helpers, variables, ...).
+src = ["src", "tests", "examples"]
